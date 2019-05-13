@@ -6,6 +6,7 @@ const app = express();
 
 //Connecting our node server to Mongo Db cloud server via Mongoose
 mongoose.connect("mongodb+srv://sanjay:0TFkCKMaLEllpiBH@teashop-4gomh.mongodb.net/karodpati?retryWrites=true") 
+
 //connect method return promise and hence it can be chainned with .then()
     .then(()=>console.log("Successfully connected to Mongo Database"))
     .catch(()=>{
