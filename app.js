@@ -1,6 +1,8 @@
 const express = require('express');
 const quizRouter = require('./routes/quiz');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
 
 const app = express();
 
@@ -29,6 +31,9 @@ app.use((req, res, next)=>{
     next();
 })
 //CORS setup end.....
+
+//parse body of all post requests to json object
+app.use(bodyParser.json());
 
 
 app.use("/api/quiz/", quizRouter);
